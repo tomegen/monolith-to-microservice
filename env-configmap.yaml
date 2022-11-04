@@ -6,8 +6,6 @@ data:
   POSTGRES_DB: postgres
   AWS_BUCKET: arn:aws:s3:::test-472916243171-dev
   AWS_REGION: us-east-1
-  AWS_PROFILE: udacity
-  URL: http://localhost:8100
+  URL: http://10.100.93.209:8100
 metadata:
   name: env-config
-  

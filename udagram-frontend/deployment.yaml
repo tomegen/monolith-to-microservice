@@ -46,11 +46,6 @@ spec:
             configMapKeyRef:
               name: env-config
               key: AWS_REGION
-        - name: AWS_PROFILE
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: AWS_PROFILE
         - name: POSTGRES_USERNAME
           valueFrom:
             configMapKeyRef:
@@ -76,3 +71,12 @@ spec:
             secretKeyRef:
               name: aws-secret
               key: AWS_SECRET_ACCESS_KEY
+        volumeMounts:
+          - name: aws-secret
+            mountPath: "/root/.aws/"
+            readOnly: true        
+      restartPolicy: Always
+      volumes:
+      - name: aws-secret
+        secret:
+          secretName: aws-secret 
