@@ -6,6 +6,6 @@ data:
   POSTGRES_DB: postgres
   AWS_BUCKET: arn:aws:s3:::test-472916243171-dev
   AWS_REGION: us-east-1
-  URL: http://10.100.93.209:8100
+  URL: http://http://a9fb207bf6532402095f05f8e245d801-1898979212.us-east-1.elb.amazonaws.com:8100
 metadata:
   name: env-config
