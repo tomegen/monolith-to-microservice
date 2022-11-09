@@ -27,7 +27,7 @@ spec:
               key: AWS_PROFILE
         - name: JWT_SECRET
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: udagram-secret
               key: JWT_SECRET
         volumeMounts:

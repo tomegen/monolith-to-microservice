@@ -53,17 +53,17 @@ spec:
               key: AWS_REGION
         - name: POSTGRES_USERNAME
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: udagram-secret
               key: POSTGRES_USERNAME
         - name: POSTGRES_PASSWORD
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: udagram-secret
               key: POSTGRES_PASSWORD
         - name: JWT_SECRET
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: udagram-secret
               key: JWT_SECRET
         volumeMounts:
