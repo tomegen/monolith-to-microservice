@@ -28,8 +28,11 @@ export class ApiService {
   }
 
   setAuthToken(token) {
-    this.httpOptions.headers = this.httpOptions.headers.append('Authorization', `jwt ${token}`);
-    this.token = token;
+    if(token!= null){
+      this.httpOptions.headers = this.httpOptions.headers.set('Authorization', `jwt ${token}`);
+      this.token = token;
+    }
+    
   }
 
   get(endpoint): Promise<any> {

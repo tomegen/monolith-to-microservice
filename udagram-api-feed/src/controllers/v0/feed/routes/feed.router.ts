@@ -14,7 +14,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
 
   const tokenBearer = req.headers.authorization.split(' ');
   if (tokenBearer.length != 2) {
-    return res.status(401).send({message: 'Malformed tokenn.' + tokenBearer.length});
+    return res.status(401).send({message: 'Malformed tokenn.' + tokenBearer.length + 'token: ' + tokenBearer[0] + " " + tokenBearer[1] + " " + tokenBearer[2] + " " + tokenBearer[3]});
   }
 
   const token = tokenBearer[1];
@@ -50,6 +50,7 @@ router.get('/signed-url/:fileName',
     requireAuth,
     async (req: Request, res: Response) => {
       const {fileName} = req.params;
+      console.log("Filename: " + fileName);
       const url = AWS.getPutSignedUrl(fileName);
       res.status(201).send({url: url});
     });

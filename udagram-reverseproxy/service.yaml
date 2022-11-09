@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: udagram-reverseproxy
   labels:
-    run: udagram-reverseproxy
+    app: udagram-reverseproxy
 spec:
   ports:
   - name: "8080"
@@ -11,5 +11,5 @@ spec:
     targetPort: 8080
     protocol: TCP
   selector:
-    run: udagram-reverseproxy
+    app: udagram-reverseproxy
   type: LoadBalancer

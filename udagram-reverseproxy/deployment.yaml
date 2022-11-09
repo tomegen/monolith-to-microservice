@@ -20,6 +20,16 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: AWS_PROFILE
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: AWS_PROFILE
+        - name: JWT_SECRET
+          valueFrom:
+            configMapKeyRef:
+              name: udagram-secret
+              key: JWT_SECRET
         volumeMounts:
           - name: aws-secret
             mountPath: "/root/.aws/"
